@@ -33,7 +33,7 @@ app.use(session({
   resave: false,
   saveUninitialized: false
 }));
-mongoose.connect('mongodb://localhost/telemedicina')
+mongoose.connect('mongodb://mongo:5QhFAHbB1fe9kkYvLqyz@containers-us-west-70.railway.app:7028')
 .then(db => console.log('db connected'))
 .catch(err => console.log(err));
 
