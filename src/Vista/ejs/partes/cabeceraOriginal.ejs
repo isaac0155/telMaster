@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Telemedicina</title>
+    <script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
+    <link
+  rel="stylesheet"
+  href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+  integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+  crossorigin="anonymous"
+/>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
+
+<link rel="stylesheet" href="/estilos/general.css">
+<style media="screen">
+  body{
+    background:rgb(171, 255, 255);
+  }
+  .contenido{
+    width: 70%;
+    margin-top:20px;
+  }
+  img{
+    margin-top:0px;
+  }
+  .des{
+    width: 100px;
+    height: 100px;
+  }
+  .vas
+  {
+    margin-top:30px;
+    background-color: rgb(0, 0, 0);
+    color: white;
+    padding: 40px;
+  }
+</style>
+  </head>
+  <body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="/">Telemedicina</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="/">Inicio <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="<%=datos.http.get.registrarHospital%>">Tus Citas</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="<%=datos.http.get.registrarDoctor%>">Historial de citas</a>
+      </li>
+
+
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <label for="" class = "text-light mr-3">Buscar Especialistas</label>
+      <select class="custom-select">
+        <option selected>Seleccione una especialidad</option>
+        <option value="1">Cardiologia</option>
+        <option value="2">Traumatologia</option>
+          <option value="3">Anestesiología</option>
+          <option value="3">Geriatría</option>
+          <option value="3">Hematología y hemoterapia</option>
+          <option value="3">Neumología</option>
+          <option value="3">Neurología</option>
+          <option value="3">Oncología</option>
+          <option value="3">Pediatría</option>
+          <option value="3">Psiquiatría</option>
+      </select>
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+    </form>
+  </div>
+  </nav>

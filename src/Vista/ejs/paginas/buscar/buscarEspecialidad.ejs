@@ -1,0 +1,85 @@
+<%- include("./../../partes/cabecera.ejs") %>
+
+
+  <div class="d-flex justify-content-center">
+    <div class="contenido"style="width:50%">
+      <div class="card mb-3" >
+        <div class="d-flex justify-content-center">
+          <img src="https://i.ibb.co/j8xHWfL/add.png" style="height: 200px;width: 200px; margin-top:20px;" class="card-img-top" alt="...">
+        </div>
+        <h1 class="text-center" style="margin-buttom:40px;">Para Nueva Solicitud Escoja una Especialidad</h1>
+        <div class="card-body">
+          <form class="" action="<%= datos.http.post.buscarEspecialidad %>" method="post">
+            <label for="" class = "text-light mr-3">Buscar por Especialidad</label>
+            <select name="especialidad" style="margin-bottom:20px;" class="custom-select">
+              <option selected>Seleccione una especialidad</option>
+              <% for(var i=0; i < datos.especialidades.length; i++) { %>
+
+                  <option value="<%=datos.especialidades[i]._id%>"><%=datos.especialidades[i].nombre%></option>
+
+              <%}    %>
+            </select>
+            <div class="d-flex justify-content-center" style="margin-bottom:20px;">
+              <button class="btn btn-success col-6" type="submit">Buscar doctor</button>
+            </div>
+          </form>
+          <p style="margin-bottom:20px;">Los resultados se muestran abajo</p>
+
+          <div class="row">
+            <!-- Repetir  -->
+            <% for(var i=0; i < datos.doctores.length; i++) { %>
+
+              <div class="col-sm-4">
+                <div class="card">
+                  <img width="100px" height="100px"class="rounded mx-auto d-block" src="https://cdn-icons-png.flaticon.com/512/1085/1085413.png" alt="" style="margin-top:10px;">
+                  <div class="card-body">
+                    <h5 class="card-title">Nombre Medico: <%= datos.doctores[i].nombres%> <%=datos.doctores[i].apellidos%> </h5>
+                    <p class="card-text">
+
+                      Esoecialidad: <%= datos.doctores[i].doctor.idEspecialidad%>  <br>
+                      Horarios: <%= datos.doctores[i].horarios%>  <br>
+                      <% if ( datos.doctores[i].doctor.estado == "ocupado") { %>
+                        <span class="badge bg-danger">Estado: Ocupado</span>
+                      <%}else {%>
+                        <span class="badge bg-success">Estado: Disponible</span>
+                      <%}%>
+                    <p>
+                    <a href="<%= datos.http.get.hacerCita %>/<%=datos.doctores[i]._id%>" class="btn btn-outline-success">Crear Solicitud a este Doctor/a</a>
+                  </div>
+                </div>
+              </div>
+
+            <%}    %>
+
+            <!-- Fin Repetir -->
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script type="text/javascript">
+  	var buscar = function()
+  	{
+      console.log("hola");
+  		fetch('<%= datos.http.post.buscarEspecialidad %>',{
+        method: 'post',
+        headers: {        'Accept': 'application/json',
+        'Content-Type': 'application/json'},
+        body: JSON.stringify({ "user": {
+          "email" : "email",
+          "password" : "password"
+        }}),
+      })
+  		    .then(response => response.text())
+  		    .then(data => {
+  		    	data = JSON.parse(data)
+  		    	console.log(data)
+  		    });
+  	}
+  	//buscar();
+  </script>
+
+<%- include("./../../partes/piePagina.ejs") %>

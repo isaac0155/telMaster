@@ -1,0 +1,50 @@
+<%- include("./../../partes/cabecera.ejs") %>
+
+<!-- Doctor - Posta
+Fecha
+hora
+observacion fsdak fasdjl fkj
+estado -->
+
+  <div class="d-flex justify-content-center">
+    <div class="contenido" style="background:rgb(255, 255, 255)">
+      <img src="https://i.ibb.co/dbmyXjc/historial-medico.png" class="rounded mx-auto d-block mt-3" styles=""width="200px" height="200px" alt="historial-medico" border="0"></a>
+      <h1 class="text-center" style="margin-buttom:20px; margin-top:20px;">Historial de Solicitudes</h1>
+      <div class="row"style="padding:20px;">
+        <!-- Repetir  -->
+        <%for (var i = 0; i < datos.citas.length; i++) {%>
+          <div class="col-sm-6">
+            <%if (datos.citas[i].estado=="rechazado") {%>
+              <div class="card text-white bg-secondary mb-3">
+            <%}else if(datos.citas[i].estado=="pendiente"){%>
+              <div class="card text-dark bg-warning mb-3">
+            <%}else{%>
+              <div class="card text-white bg-success mb-3">
+            <%}%>
+              <div class="card-body">
+                <h5 class="card-title">Solicitud: <%=datos.citas[i].estado%> </h5>
+                <% if(datos.tipo == "posta"){ %>
+                  <p>Nombre del Doctor:<%=datos.citas[i].doctor.nombres%> <%=datos.citas[i].doctor.apellidos%></p>
+                  <% if(datos.citas[i].estado == "aceptada"){  %>
+                  <p>Telefono Doctor: <%=datos.citas[i].doctor.telefono%> <br><a class="" style="color:rgb(226, 226, 226); font-weight:bold;text-decoration: underline;"target="_blank" href="https://web.whatsapp.com/send?phone=<%=datos.citas[i].doctor.telefono%>">(Click aquí para enviar mensaje WhatsApp)</a></p>
+                  <% } %>
+                  <% } %>
+                  <% if(datos.tipo == "doctor"){ %>
+                    <p>Posta:<%=datos.citas[i].posta.nombre%></p>
+                    <p>Nombre Encargado Posta:<%=datos.citas[i].adminPosta.nombres%> <%=datos.citas[i].adminPosta.apellidos%></p>
+                    <p>Telefono Posta: <%=datos.citas[i].adminPosta.telefono%> <br><a class="" style="color:rgb(226, 226, 226);font-weight:bold;text-decoration: underline;"target="_blank" href="https://web.whatsapp.com/send?phone=<%=datos.citas[i].adminPosta.telefono%>">(Click aquí para enviar mensaje WhatsApp)</a></p>
+                    <% } %>
+                <p class="card-text">Fecha y hora de la Cita: <%= datos.citas[i].fecha %>, <%= datos.citas[i].hora %><p>
+                <textarea name="observacion" class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 200px;" disabled="disabled">
+<%= datos.citas[i].observacion%>
+                </textarea>
+              </div>
+            </div>
+          </div>
+        <%}%>
+        <!-- Fin Repetir -->
+      </div>
+    </div>
+  </div>
+
+<%- include("./../../partes/piePagina.ejs") %>

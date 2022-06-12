@@ -1,0 +1,46 @@
+<%- include("./../../partes/cabecera.ejs") %>
+
+
+  <div class="d-flex justify-content-center">
+    <div class="contenido"style="width:50%">
+      <div class="card mb-3" >
+        <div class="d-flex justify-content-center">
+          <img src="https://i.ibb.co/kMJwvdk/correo-electronico.png" style="height: 200px;width: 200px;" class="card-img-top" alt="...">
+        </div>
+        <form class="form-signin" method="post" action="<%= datos.http.post.enviarSolicitud %>">
+          <h1 class="text-center" style="margin-buttom:40px;">Nueva Solicitud de Cita</h1>
+          <div class="card-body">
+            <h5 class="text-center" style="margin-buttom:40px;">Solicitud para Dr/a.: <%= datos.doctor.nombres %> <%= datos.doctor.apellidos %></h5>
+            <h5 class="text-center" style="margin-buttom:40px;">Centro de Salud Origen: <%=  datos.centro%></h5>
+
+
+            <div class="form-floating">
+              <input type="text" style="display:none;" name="idDoctor" value="<%= datos.doctor._id%>">
+              <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Ingresar fecha para la cita</label>
+                <input type="date" class="form-control" id="exampleFormControlInput1" name="fecha">
+              </div>
+              <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Ingresar hora para la Cita</label>
+                <input type="time" class="form-control" id="exampleFormControlInput1" name="hora">
+              </div>
+              <textarea name="observacion" class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 300px">
+Caso:
+Nombre del Paciente:
+Fecha de nacimiento:
+Observaciones:
+              </textarea>
+              <label for="floatingTextarea2">Ingresar los datos del paciente.</label>
+            </div>
+
+          </div>
+          <div class="d-flex justify-content-center" style="margin-bottom:20px;">
+            <button class="btn btn-success col-6" type="submit">Enviar Solicitud de Cita</button>
+          </div>
+        </form>
+
+      </div>
+    </div>
+  </div>
+
+<%- include("./../../partes/piePagina.ejs") %>

@@ -1,0 +1,58 @@
+<%- include("./../partes/cabecera.ejs") %>
+
+
+  <div class="d-flex justify-content-center">
+    <div class="contenido"style="width:50%">
+      <div class="card mb-3" >
+        <div class="d-flex justify-content-center">
+          <img src="https://i.ibb.co/6FJbx63/patient.png" style="height: 200px;width: 200px;" class="card-img-top m-3" alt="...">
+        </div>
+        <div class="card-body text-center">
+          <h1 class="card-title">Cuenta de: <%= datos.usuario.nombres %> <%= datos.usuario.apellidos %></h1>
+            <% if(datos.usuario.tipo == "doctor") {%>
+              <p>Estas son tus especialidades registrardas:</p>
+              <p><%= datos.espDoctor.map(a=>a.nombre).join(", ") %></p>
+              <form class="" action="<%=datos.http.post.añadirEspecialidad%>" method="post">
+                <select name="especialidad" style="margin-bottom:20px;" class="custom-select col-6">
+                  <option selected>Seleccione una especialidad para añadir a su cuenta</option>
+                  <% for(var i=0; i < datos.especialidades.length; i++) { %>
+
+                    <option value="<%=datos.especialidades[i]._id%>"><%=datos.especialidades[i].nombre%></option>
+
+                    <%}    %>
+                  </select>
+                  <br>
+                  <button type="submit" class="btn btn-success">Añadir nueva Especialidad</button>
+              </form>
+              <form class="" action="<%=datos.http.post.cambiarEstado%>" method="post">
+                <% if(datos.usuario.doctor.estado == "activo") {%>
+                  <p class="card-text">Es importante mantener actualizado su Actividad para poder ser precisos al momento de recibir Solicitude de Citas.</p>
+                  <div class="alert alert-success" role="alert">
+                    Su estado Actual es: Activo
+                  </div>
+                  <button type="submit" class="btn btn-danger">Cambiar estado a Ocupado</button>
+                  <% } else {%>
+                    <p class="card-text">Es importante mantener actualizado su Actividad para poder ser precisos al momento de recibir Solicitude de Citas.</p>
+                    <div class="alert alert-danger" role="alert">
+                      Su estado Actual es: Ocupado
+                    </div>
+                    <button type="submit" class="btn btn-success">Cambiar estado a Activo</button>
+                    <% } %>
+              </form>
+              <% } else{%>
+                <% if(datos.usuario.tipo == "centro") {%>
+                  <p>Mi Centro de Salud: <%=datos.centroNombre %></p>
+
+                  <% } %>
+                <p>Tipo de cuenta: <%=datos.usuario.tipo %></p>
+                <p>Correo: <%=datos.usuario.correo %></p>
+                <p>Fecha de Nacimiento: <%=datos.usuario.fechaNac %></p>
+                <p>Carnet: <%=datos.usuario.carnet %></p>
+                <p>Telefono: <%=datos.usuario.telefono %></p>
+              <%  }%>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<%- include("./../partes/piePagina.ejs") %>

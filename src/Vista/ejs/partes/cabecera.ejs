@@ -1,0 +1,14 @@
+<% if(datos.usuario==undefined) {%>
+  <%- include("./cabeceraIni.ejs") %>
+  <% } else {%>
+    
+    <% if(datos.usuario.tipo == "doctor") {%>
+      <%- include("./cabeceraDoctor.ejs") %>
+      <% }%>
+    <% if(datos.usuario.tipo == "centro") {%>
+      <%- include("./cabeceraCentro.ejs") %>
+      <% }%>
+    <% if(datos.usuario.tipo == "admin") {%>
+      <%- include("./cabeceraAdmin.ejs") %>
+      <% }%>
+  <% }%>

@@ -1,0 +1,20 @@
+<%- include("./partes/cabecera.ejs") %>
+<div class="row d-flex justify-content-center col-12">
+  <div class="m-5 p-5 bg-light col-6 text-center">
+
+    <form class="form-signin" method="post" action="/iniciarSesion">
+        <img class="mb-4" src="https://i.ibb.co/rt7Qh3t/perfil-del-usuario.png" alt="" width="200px" height="200px">
+        <h1 class="h3 mb-3 font-weight-normal">Inicio de Sesion</h1>
+        <label for="inputEmail" class="sr-only">Correo electrónico</label>
+        <input type="email" name="correo" id="inputEmail" class="form-control m-2 p-4" placeholder="Email address" required="" autofocus="">
+        <label for="inputPassword" class="sr-only">Contraseña</label>
+        <input type="password" name="contra" id="inputPassword" class="form-control m-2 p-4" placeholder="Password" required="">
+        <button class="btn btn-lg btn-primary btn-block m-2" type="submit">Sign in</button>
+        <p class="mt-5 mb-3 text-muted">© 2022</p>
+      </form>
+
+  </div>
+
+</div>
+
+<%- include("./partes/piePagina.ejs") %>

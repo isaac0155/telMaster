@@ -1,0 +1,56 @@
+[{
+  "_id": {
+    "$oid": "62a257e3999db815a8ab685f"
+  },
+  "idAdminCentro": "62a169245bdeb6ea1de7de8d",
+  "idDoctor": "62a24c1674e9576c5bf8e72c",
+  "fecha": "2022-06-11",
+  "hora": "15:20",
+  "observacion": "Caso: Fractura de pierna\r\nNombre del Paciente: Jose Luis Rodriguez\r\nFecha de nacimiento: 30/08/1998\r\nObservaciones: Se fracturó en el columpio y se le salió el hueso, además de le metió tierra en la herida. \r\n              ",
+  "__v": 0,
+  "estado": "rechazado"
+},{
+  "_id": {
+    "$oid": "62a2b04b17c6d774a3526d81"
+  },
+  "idAdminCentro": "62a169245bdeb6ea1de7de8d",
+  "idDoctor": "62a157dfb14b53e9d85ae0cf",
+  "fecha": "2022-06-30",
+  "hora": "13:30",
+  "observacion": "Caso: Apendicitis\r\nNombre del Paciente: Einar Villarroel\r\nFecha de nacimiento: 02/06/1999\r\nObservaciones: Le dió una apendicitis grave por comer ramen cerca de la San Simón.\r\n              ",
+  "__v": 0,
+  "estado": "aceptada"
+},{
+  "_id": {
+    "$oid": "62a361d150cff0388272af01"
+  },
+  "idAdminCentro": "62a169245bdeb6ea1de7de8d",
+  "idDoctor": "62a24c1674e9576c5bf8e72c",
+  "fecha": "2022-06-11",
+  "hora": "12:00",
+  "observacion": "Caso: coronavirus\r\nNombre del Paciente: puma\r\nFecha de nacimiento: 1998\r\nObservaciones: ha vomitado su higado\r\n              ",
+  "__v": 0,
+  "estado": "rechazado"
+},{
+  "_id": {
+    "$oid": "62a36286dee9bff023aa5dcd"
+  },
+  "idAdminCentro": "62a169245bdeb6ea1de7de8d",
+  "idDoctor": "62a157dfb14b53e9d85ae0cf",
+  "fecha": "2022-06-21",
+  "hora": "17:25",
+  "observacion": "Caso: vih\r\nNombre del Paciente: Julian Castro\r\nFecha de nacimiento: 1914\r\nObservaciones: Se contagió cuando serrucheó a su mejor amigo en la segunda guerra del chaco\r\n              ",
+  "__v": 0,
+  "estado": "rechazado"
+},{
+  "_id": {
+    "$oid": "62a362e872b67f3f7da998b5"
+  },
+  "idAdminCentro": "62a169245bdeb6ea1de7de8d",
+  "idDoctor": "62a24c1674e9576c5bf8e72c",
+  "fecha": "2022-06-24",
+  "hora": "15:29",
+  "observacion": "Caso:\r\nNombre del Paciente:\r\nFecha de nacimiento:\r\nObservaciones:\r\n              ",
+  "estado": "aceptada",
+  "__v": 0
+}]

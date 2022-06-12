@@ -1,0 +1,97 @@
+[{
+  "_id": {
+    "$oid": "62a157dfb14b53e9d85ae0cf"
+  },
+  "nombres": "Erick",
+  "apellidos": "Aranibar",
+  "direccion": "Avenida Tadeo Aenke y Villavicencio",
+  "horarios": "3",
+  "correo": "aranibarerick@gmail.com",
+  "fechaNac": "2022-01-05",
+  "carnet": "21",
+  "doctor": {
+    "estado": "activo",
+    "zoom": "http://localhost:4000/Registrar/Doctor",
+    "idEspecialidad": [
+      "62a2185974e9576c5bf8e729"
+    ],
+    "_id": {
+      "$oid": "62a157dfb14b53e9d85ae0d0"
+    }
+  },
+  "__v": 0,
+  "contra": "contra",
+  "tipo": "doctor",
+  "telefono": "67455799"
+},{
+  "_id": {
+    "$oid": "62a169245bdeb6ea1de7de8d"
+  },
+  "nombres": "Erick2",
+  "apellidos": "Aranibar2",
+  "direccion": "Avenida Tadeo Aenke y Villavicencio",
+  "horarios": "3",
+  "correo": "aranibarerick2@gmail.com",
+  "fechaNac": "2022-01-05",
+  "carnet": "21",
+  "doctor": {
+    "estado": "activo",
+    "zoom": "http://localhost:4000/Registrar/Doctor",
+    "idEspecialidad": [],
+    "_id": {
+      "$oid": "62a157dfb14b53e9d85ae0d0"
+    }
+  },
+  "__v": 0,
+  "contra": "contra",
+  "tipo": "centro",
+  "idCentro": "62a104619dc6d666925a5800",
+  "telefono": "78344318"
+},{
+  "_id": {
+    "$oid": "62a169425bdeb6ea1de7de8e"
+  },
+  "nombres": "admin",
+  "apellidos": "adm",
+  "direccion": "Avenida Tadeo Aenke y Villavicencio",
+  "horarios": "3",
+  "correo": "admin@gmail.com",
+  "fechaNac": "2022-01-05",
+  "carnet": "21",
+  "doctor": {
+    "estado": "activo",
+    "zoom": "http://localhost:4000/Registrar/Doctor",
+    "idEspecialidad": [],
+    "_id": {
+      "$oid": "62a157dfb14b53e9d85ae0d0"
+    }
+  },
+  "__v": 0,
+  "contra": "contra",
+  "tipo": "admin"
+},{
+  "_id": {
+    "$oid": "62a24c1674e9576c5bf8e72c"
+  },
+  "nombres": "Luis",
+  "apellidos": "Sanchez",
+  "direccion": "Avenida Tadeo Aenke y Villavicencio",
+  "horarios": "3",
+  "correo": "doctor@gmail.com",
+  "fechaNac": "2022-01-05",
+  "carnet": "21",
+  "doctor": {
+    "estado": "activo",
+    "zoom": "http://localhost:4000/Registrar/Doctor",
+    "idEspecialidad": [
+      "62a2181874e9576c5bf8e727"
+    ],
+    "_id": {
+      "$oid": "62a157dfb14b53e9d85ae0d0"
+    }
+  },
+  "__v": 0,
+  "contra": "contra",
+  "tipo": "doctor",
+  "telefono": "77404206"
+}]

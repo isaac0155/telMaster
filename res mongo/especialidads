@@ -1,0 +1,16 @@
+[{
+  "_id": {
+    "$oid": "62a2181874e9576c5bf8e727"
+  },
+  "nombre": "cardiologia"
+},{
+  "_id": {
+    "$oid": "62a2184c74e9576c5bf8e728"
+  },
+  "nombre": "traumatologia"
+},{
+  "_id": {
+    "$oid": "62a2185974e9576c5bf8e729"
+  },
+  "nombre": "psicologia"
+}]

@@ -1,0 +1,10 @@
+<script type="text/javascript">
+  function leerObjeto()
+  {
+    var ret = '<%- JSON.stringify(datos) %>'
+    ret = JSON.parse(ret);
+    return ret;
+  }
+  datos = leerObjeto();
+  console.log(datos);
+</script>

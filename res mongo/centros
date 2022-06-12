@@ -1,0 +1,12 @@
+[{
+  "_id": {
+    "$oid": "62a104619dc6d666925a5800"
+  },
+  "nombre": "San Juan de Dios",
+  "direccion": "Avenida Tadeo Aenke y Villavicencio",
+  "tipo": "1",
+  "telefono": "67455799",
+  "correo": "aranibarerick@gmail.com",
+  "idDoctor": [],
+  "__v": 0
+}]

@@ -1,0 +1,55 @@
+<%- include("./../../partes/cabecera.ejs") %>
+
+<!-- Posta
+Fecha
+hora
+observacion
+estado -->
+
+  <div class="d-flex justify-content-center">
+    <div class="contenido" style="background:rgb(255, 255, 255)">
+      <img src="https://i.ibb.co/dbmyXjc/historial-medico.png" class="rounded mx-auto d-block mt-3" styles=""width="200px" height="200px" alt="historial-medico" border="0"></a>
+      <h1 class="text-center" style="margin-buttom:20px; margin-top:20px;">Solicitudes Pendientes</h1>
+      <div class="row"style="padding:20px;">
+        <!-- Repetir  -->
+        <%for (var i = 0; i < datos.citas.length; i++) {%>
+          <div class="col-sm-6">
+            <%if (datos.citas[i].estado=="rechazado") {%>
+              <div class="card text-white bg-secondary mb-3">
+            <%}else if(datos.citas[i].estado=="pendiente"){%>
+              <div class="card text-dark bg-warning mb-3">
+            <%}else{%>
+              <div class="card text-white bg-success mb-3">
+            <%}%>
+              <div class="card-body">
+                <h5 class="card-title">Solicitud: <%=datos.citas[i].estado%> </h5>
+                <p class="card-text">Fecha y hora de la Cita: <%= datos.citas[i].fecha %>, <%= datos.citas[i].hora %><p>
+                <p class="card-text">Origen Posta: <%= datos.citas[i].posta %><p>
+                <p class="card-text">Admin Posta: <%= datos.citas[i].adminPosta %><p>
+                <textarea name="observacion" class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 200px;" disabled="disabled">
+<%= datos.citas[i].observacion%>
+                </textarea>
+              </div>
+                <div class="d-flex justify-content-center">
+                  <div class="">
+                    <div class="btn-group m-3" role="group" aria-label="Basic mixed styles example">
+                    <form class="" action="<%= datos.http.post.rechazarSolicitud %>" method="post">
+                      <input type="text" name="idCita" value="<%= datos.citas[i]._id %>"style="display:none;">
+                      <button class="btn btn-danger"type="submit">Rechazar Solicitud</button>
+                    </form>
+                    <form class="" action="<%= datos.http.post.aceptarSolicitud %>" method="post">
+                      <input type="text" name="idCita" value="<%= datos.citas[i]._id %>"style="display:none;">
+                      <button class="btn btn-success"type="submit">Aceptar Solicitud</button>
+                    </form>
+                    </div>
+                  </div>
+                </div>
+            </div>
+          </div>
+        <%}%>
+        <!-- Fin Repetir -->
+      </div>
+    </div>
+  </div>
+
+<%- include("./../../partes/piePagina.ejs") %>

@@ -1,0 +1,29 @@
+<%- include("./../../partes/cabecera.ejs") %>
+
+
+  <div class="d-flex justify-content-center">
+    <div class="contenido">
+      <h1 class="text-center" style="margin-buttom:20px;">Historial de Solicitudes</h1>
+      <div class="row">
+        <!-- Repetir  -->
+        <div class="col-sm-6">
+          <div class="card text-dark bg-light mb-3"><!-- para card de solicitudes aceptadas -->
+          <!-- <div class="card text-white bg-secondary mb-3"> --><!-- para card de solicitudes rechazadas -->
+            <div class="card-body">
+              <h5 class="card-title">Esta solicitud fue: <%=  %> </h5>
+              <p class="card-text">
+                <%=  %>
+              <p>
+              <br>
+              <p class="card-text">
+                Fecha: <%=  %>
+              <p>
+            </div>
+          </div>
+        </div>
+        <!-- Fin Repetir -->
+      </div>
+    </div>
+  </div>
+
+<%- include("./../../partes/piePagina.ejs") %>

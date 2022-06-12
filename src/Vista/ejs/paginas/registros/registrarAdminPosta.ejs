@@ -1,0 +1,63 @@
+<%- include("./../../partes/cabecera.ejs") %>
+
+
+<div class="d-flex justify-content-center">
+  <div class="contenido">
+    <div class="row g-0 bg-light position-relative">
+      <div class="col-md-6 mb-md-0 p-md-4">
+        <img src="https://i.ibb.co/gTWJMrL/register.png" class="w-100" alt="...">
+      </div>
+      <div class="col-md-6 p-4 ps-md-0">
+        <h1 style="margin-buton:20px; margin-top:20px;">Registro de Administrador Posta</h1>
+        <form method="post" action="<%=datos.http.post.registrarAdminPosta%>">
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Nombres</label>
+            <input name="nombres" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Apellidos</label>
+            <input name="apellidos" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Carnet de Identidad</label>
+            <input name="carnet" type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Fecha de Nacimiento</label>
+            <input name="fechaNac" type="date" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Dirección de Correo</label>
+            <input name="correo" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            <div id="emailHelp" class="form-text">No compartimos su correo electrónico con nadie.</div>
+          </div>
+          <div class="mb-3">
+            <label for="" class="form-label">Centro de Salud a asignar</label>
+            <select name="idCentro" class="form-select" aria-label="Default select example">
+              <option selected>Seleccione un centro de salud</option>
+              <% for (var i = 0; i < datos.centros.length; i++) {%>
+                <option value="<%= datos.centros[i]._id%>"><%= datos.centros[i].nombre %></option>
+              <%} %>
+            </select>
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Dirección</label>
+            <input name="direccion" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Teléfono de contacto</label>
+            <input name="telefono" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Contraseña</label>
+            <input name="contra" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+          </div>
+          <button type="submit" class="btn btn-primary">Registrar Administrador para Posta</button>
+        </form>
+      </div>
+  </div>
+  </div>
+</div>
+
+
+<%- include("./../../partes/piePagina.ejs") %>
